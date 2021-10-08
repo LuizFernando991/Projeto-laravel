@@ -169,6 +169,7 @@ header{
 
 #info-container p {
     margin: 0;
+    margin-bottom: 5px;
     font-size: 14px;
     display: flex;
 }
