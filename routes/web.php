@@ -23,7 +23,10 @@ Route::get('/events/{id}', [EventController::class, 'show']);
 
 Route::post('/postevent', [EventController::class, 'store']);
 
+Route::delete('/events/{id}', [EventController::class, 'destroy']);
+
 Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
+
 
 //Route::get('/contato', function () {
 //    return view('contato');
