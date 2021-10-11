@@ -23,10 +23,8 @@ Route::get('/events/{id}', [EventController::class, 'show']);
 
 Route::post('/postevent', [EventController::class, 'store']);
 
-Route::get('/contato', function () {
-    return view('contato');
-});
+Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+//Route::get('/contato', function () {
+//    return view('contato');
+//});

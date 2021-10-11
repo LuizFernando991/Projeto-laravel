@@ -199,6 +199,25 @@ header{
     display: flex;
 }
 
+/* Dashboard */
+
+.dashboard-title-comtainer{
+
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.dashboard-events-container th{
+
+    width: 25%;
+}
+
+.dashboard-events-container a{
+
+    text-decoration: none;
+    margin-right: 50px;
+}
+
 /* footer */
 
 footer{
