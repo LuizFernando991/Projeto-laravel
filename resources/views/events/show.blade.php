@@ -13,10 +13,20 @@
         <p class="event-date"><ion-icon name="calendar-outline"></ion-icon> {{ date('d/m/Y', strtotime($event->date)) }}</p>
         <p class="events-participants"><ion-icon name="people-outline"></ion-icon> {{ count($event->users) }} Participantes</p>
         <p class="event-owner"><ion-icon name="star-outline"></ion-icon>{{ $eventOwner['name']}}</p>
-        <form action="/events/join/{{ $event->id }}" method="POST">
-          @csrf
-          <a href="/events/join/{{ $event->id }}" class="btn btn-primary" id="event-submit" onclick="event.preventDefault(); this.closest('form').submit();">Confirmar Presença</a>
-        </form>
+        
+        @if (!$hasUserJoined)
+          <form action="/events/join/{{ $event->id }}" method="POST">
+            @csrf
+            <a href="/events/join/{{ $event->id }}" class="btn btn-primary" id="event-submit" onclick="event.preventDefault(); this.closest('form').submit();">Confirmar Presença</a>
+          </form>
+        @else
+          <form action="/events/leave/{{ $event->id }}" method="POST">
+            @csrf
+            @method("DELETE")
+            <a href="/events/leave/{{ $event->id }}" class="btn btn-danger" id="event-submit" onclick="event.preventDefault(); this.closest('form').submit();">Desconfirmar Presença</a>
+          </form>
+        @endif
+
         <h3>O evento conta com: </h3>
         <ul id="items-list">
             @foreach ($event->items as $item)

@@ -33,6 +33,8 @@ Route::put('/events/update/{id}', [EventController::class, 'update'])->middlewar
 
 Route::post('/events/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');
 
+Route::delete('/events/leave/{id}', [EventController::class, 'leaveEvent'])->middleware('auth');
+
 
 //Route::get('/contato', function () {
 //    return view('contato');
