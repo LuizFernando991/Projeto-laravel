@@ -31,6 +31,8 @@ Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('aut
 
 Route::put('/events/update/{id}', [EventController::class, 'update'])->middleware('auth');
 
+Route::post('/events/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');
+
 
 //Route::get('/contato', function () {
 //    return view('contato');
