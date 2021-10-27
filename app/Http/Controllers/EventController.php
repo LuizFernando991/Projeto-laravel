@@ -29,6 +29,10 @@ class EventController extends Controller
     }
 
     public function store(Request $request){
+
+        // pode-se usar o metodo ::create[
+        //
+        //]
         $event = new Event;
 
         $event->title = $request->title;
