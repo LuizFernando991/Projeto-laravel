@@ -107,6 +107,7 @@ class EventController extends Controller
 
         Event::findOrFail($id)->delete();
 
+
         return redirect('/dashboard')->with('msg', 'Evento deletado!');
 
     }
